@@ -1,0 +1,34 @@
+#!/bin/bash
+
+cleanmyaudios() {
+    if [[ ! -d "${1%/}/cma_done" ]] && [[ ! -h "${1%/}/cma_done" ]]; then
+        sudo mkdir "${1%/}/cma_done"
+    fi
+
+    if [[ ! -d "${1%/}/cma_delete" ]] && [[ ! -h "${1%/}/cma_delete" ]]; then
+        sudo mkdir "${1%/}/cma_delete"
+    fi
+
+
+    for f in ${1%/}/*.mp3; do {
+
+        #echo "New track on the horizon !"
+        mpg123 "$f"
+        read "confirm?Delete that file ? [yn]: ?"
+        if [[ ${confirm:0:1} == 'y' ]]; then
+            if [[ -o force ]]; then 
+                rm "$f"
+            else
+                mv "$f" "cma_delete/$f"
+            fi
+        else
+            mv "$f" "cma_done/$f"
+        fi
+
+    }; done
+
+    read "delconf?Confirm deletion of files in the cma_delete folder ? [yn]: ?"
+    if [[ ${delconf:0:1} == 'y' ]]; then
+        rm cma_delete/*.mp3
+    done;
+}
