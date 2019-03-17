@@ -10,7 +10,9 @@ This is because cma creates 2 folders in the dir you provide:
 
 cma_classes/
   happy
+  
   energetic
+  
   ...
 
 
