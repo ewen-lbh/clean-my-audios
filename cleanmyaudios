@@ -12,8 +12,7 @@ cleanmyaudios() {
 
     for f in ${1%/}/*.mp3; do {
 
-        #echo "New track on the horizon !"
-        mpg123 "$f"
+        mpg123 -qv --long-tag --title "$f"
         read "confirm?Delete that file ? [yn]: ?"
         if [[ ${confirm:0:1} == 'y' ]]; then
             if [[ -o force ]]; then 
@@ -30,5 +29,5 @@ cleanmyaudios() {
     read "delconf?Confirm deletion of files in the cma_delete folder ? [yn]: ?"
     if [[ ${delconf:0:1} == 'y' ]]; then
         rm cma_delete/*.mp3
-    done;
+    fi;
 }
