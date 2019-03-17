@@ -23,3 +23,5 @@ This is because cma creates 2 folders in the dir you provide:
     KEPT: $file
 ```
 (in case `mv` fails, you can do it manually)
+
+- Add progress % of mp3s in cma_done+cma_delete over mp3s in ./
