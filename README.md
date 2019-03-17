@@ -7,7 +7,8 @@ This is because cma creates 2 folders in the dir you provide:
 
 # Roadmap
 - Add folders for genre/mood classification, eg
-```cma_classes/
+```
+    cma_classes/
       happy
       energetic
       ...
