@@ -15,3 +15,4 @@ This is because cma creates 2 folders in the dir you provide:
 ```
 - Add colors
 - Improve mp3-playing CLI (too much info rn)
+- Add option to use "Keep file ?" instead of "Delete that file" for confirmation
