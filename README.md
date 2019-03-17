@@ -17,3 +17,9 @@ This is because cma creates 2 folders in the dir you provide:
 - Improve mp3-playing CLI (too much info rn)
 - Add option to use "Keep file ?" instead of "Delete that file" for confirmation
 - Add usage notice if `$# < 1`
+- Add log, eg
+```
+	DELD: $file
+    KEPT: $file
+```
+(in case `mv` fails, you can do it manually)
