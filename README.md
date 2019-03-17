@@ -9,8 +9,8 @@ This is because cma creates 2 folders in the dir you provide:
 - Add folders for genre/mood classification, eg
 ```
     cma_classes/
-      happy
-      energetic
+      happy/*.mp3
+      energetic/*mp3
       ...
 ```
 - Add colors
